@@ -1,5 +1,4 @@
-import 'styles/theme.css';
-import 'style.css';
+import 'styles/main.css';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
