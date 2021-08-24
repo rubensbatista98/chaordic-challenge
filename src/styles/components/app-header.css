@@ -9,15 +9,6 @@
   position: relative;
 }
 
-/*
-  For some reason rem unit is been 16px rather than 62.5% applied in html
-  on reset.
-
-  fix this later
-
-  37.5rem = 600px
-*/
-
 .app-header::before {
   content: '';
 
@@ -50,6 +41,15 @@
   max-inline-size: var(--size);
   margin-block-start: var(--spacing-1);
 }
+
+/*
+  For some reason rem unit is been 16px rather than 62.5% applied in html
+  on reset.
+
+  fix this later
+
+  37.5rem = 600px
+*/
 
 @media (min-width: 37.5rem) {
   .app-header > :is(.title, .subtitle) {
