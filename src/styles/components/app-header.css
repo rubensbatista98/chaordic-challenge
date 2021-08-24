@@ -1,0 +1,43 @@
+.app-header {
+  --size: 36rem;
+
+  color: var(--text-3);
+
+  padding-block: 6.5rem 7.5rem;
+  padding-inline: var(--spacing-2);
+
+  position: relative;
+}
+
+.app-header::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background-color: var(--surface-2);
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+  z-index: -1;
+}
+
+.app-header > .title {
+  max-inline-size: var(--size);
+
+  font-size: 4rem;
+}
+
+.app-header > .title > span {
+  display: block;
+
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-5);
+}
+
+.app-header > .subtitle {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-regular);
+
+  max-inline-size: var(--size);
+  margin-block-start: var(--spacing-1);
+}
