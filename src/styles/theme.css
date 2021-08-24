@@ -10,11 +10,11 @@
   --text-2: hsl(var(--brand-hue) 55% 90%);
   --text-3: hsl(var(--brand-hue) 35% 25%);
 
-  --fs-size-1: 1.2rem;
-  --fs-size-2: 1.4rem;
-  --fs-size-3: 1.6rem;
-  --fs-size-4: 1.8rem;
-  --fs-size-5: 2rem;
+  --fs-1: 1.2rem;
+  --fs-2: 1.4rem;
+  --fs-3: 1.6rem;
+  --fs-4: 1.8rem;
+  --fs-5: 2rem;
 
   --spacing-1: 0.8rem;
   --spacing-2: 1.6rem;

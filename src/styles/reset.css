@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
 
   font-family: 'Roboto', Helvetica, sans-serif;
-  font-size: var(--fs-size-3);
+  font-size: var(--fs-3);
   color: var(--text-1);
 
   background-color: var(--surface-1);
