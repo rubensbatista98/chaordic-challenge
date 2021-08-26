@@ -2,7 +2,7 @@ import 'styles/pages/home.css';
 
 import { AppHeader } from 'components/app-header';
 
-import { HeaderButtons } from './header-buttons';
+import { Navigation } from './navigation';
 
 function Home() {
   const fragment = document.createDocumentFragment();
@@ -65,8 +65,8 @@ function Home() {
     </div>
   `;
 
-  const $headerButtons = HeaderButtons();
-  const $header = AppHeader({ children: $headerButtons });
+  const $navigation = Navigation();
+  const $header = AppHeader({ children: $navigation });
 
   fragment.appendChild($header);
   fragment.appendChild($algorithmSection);

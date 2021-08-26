@@ -1,4 +1,4 @@
-.header-buttons {
+.navigation {
   --columns: 2;
 
   display: grid;
@@ -11,13 +11,13 @@
 
 /* 57.5rem = 920px / 16px   */
 @media (min-width: 57.5rem) {
-  .header-buttons {
+  .navigation {
     --columns: 4;
     gap: var(--spacing-5);
   }
 }
 
-.header-buttons > .button {
+.navigation > .link {
   justify-self: center;
 
   min-inline-size: 16rem;
