@@ -34,11 +34,22 @@
 }
 
 .algorithm-section {
+  max-width: 92rem;
+
   display: grid;
+  grid-template-columns: minmax(auto, 50rem);
+  justify-content: center;
   gap: var(--spacing-4);
 
   padding-inline: var(--spacing-2);
-  margin-block-start: var(--spacing-4);
+  margin: var(--spacing-4) auto 0;
+}
+
+@media (min-width: 60rem) {
+  .algorithm-section {
+    grid-template-columns: 1fr 34rem;
+    gap: 6rem;
+  }
 }
 
 .algorithm-section .title {
@@ -65,6 +76,7 @@
   font-size: var(--fs-3);
   font-weight: var(--fw-bold);
   text-align: center;
+  text-transform: uppercase;
 
   color: var(--text-3);
   background-color: var(--surface-2);
