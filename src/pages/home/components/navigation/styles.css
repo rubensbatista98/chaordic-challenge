@@ -1,0 +1,34 @@
+.navigation {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 16rem));
+  justify-content: center;
+  gap: var(--spacing-3);
+
+  margin-block-start: 5rem;
+}
+
+/* 57.5rem = 920px / 16px   */
+@media (min-width: 57.5rem) {
+  .navigation {
+    --columns: 4;
+    gap: var(--spacing-5);
+  }
+}
+
+.navigation > .link {
+  justify-self: center;
+
+  min-inline-size: 16rem;
+
+  font-size: var(--fs-2);
+  text-align: center;
+
+  color: var(--text-1);
+  background-color: var(--surface-1);
+
+  padding-block: 1.2rem;
+  border: 1px solid var(--surface-2);
+  border-radius: 4px;
+}

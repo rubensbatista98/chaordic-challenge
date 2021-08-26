@@ -1,9 +1,7 @@
-import 'styles/pages/home.css';
-
 import { AppHeader } from 'components/app-header';
 
-import { Navigation } from './navigation';
-import { AlgorithmSection } from './algorithm-section';
+import { Navigation } from './components/navigation';
+import { AlgorithmSection } from './components/algorithm-section';
 
 function Home() {
   const fragment = document.createDocumentFragment();

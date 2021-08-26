@@ -1,3 +1,5 @@
+import './styles.css';
+
 function AlgorithmSection() {
   const $algorithmSection = document.createElement('section');
   $algorithmSection.className = 'algorithm-section';

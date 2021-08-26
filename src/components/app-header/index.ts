@@ -1,4 +1,4 @@
-import 'styles/components/app-header.css';
+import './styles.css';
 
 export type AppHeaderProps = {
   children?: HTMLElement | DocumentFragment;

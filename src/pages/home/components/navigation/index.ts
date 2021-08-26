@@ -1,3 +1,5 @@
+import './styles.css';
+
 function createLink(text: string) {
   const $link = document.createElement('a');
 
