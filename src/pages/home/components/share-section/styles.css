@@ -66,31 +66,6 @@
   margin-block-end: var(--spacing-5);
 }
 
-.share-form > .inputs-container > .input-block {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-}
-
-.share-form .input-block > label {
-  font-size: var(--fs-2);
-  font-weight: var(--fw-bold);
-  color: var(--text-2);
-
-  cursor: pointer;
-}
-
-.share-form .input-block > input {
-  font-size: var(--fs-2);
-  font-family: inherit;
-
-  border: 2px solid var(--surface-2);
-  border-radius: 5px;
-  outline: none;
-
-  padding: var(--spacing-1);
-}
-
 /* 37.5rem = 600px / 16px */
 @media (min-width: 37.5rem) {
   .share-section > .share-form > .inputs-container {

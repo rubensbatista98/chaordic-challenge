@@ -1,22 +1,29 @@
+import { InputBlock } from 'components/input-block';
+
 function ShareForm() {
   const $form = document.createElement('form');
+  const $inputsContainer = document.createElement('div');
+
   $form.className = 'share-form';
+  $inputsContainer.className = 'inputs-container';
+
+  const inputName = InputBlock({
+    label: 'Nome do seu amigo:',
+    name: 'friend-name'
+  });
+
+  const inputEmail = InputBlock({
+    label: 'E-mail:',
+    name: 'friend-email'
+  });
+
+  $inputsContainer.appendChild(inputName.$block);
+  $inputsContainer.appendChild(inputEmail.$block);
+  $form.appendChild($inputsContainer);
 
   $form.insertAdjacentHTML(
-    'afterbegin',
+    'beforeend',
     `
-      <div class="inputs-container">
-        <div class="input-block">
-          <label for="friend-name">Nome do seu amigo:</label>
-          <input type="text" id="friend-name" name="friend-name" />
-        </div>
-
-        <div class="input-block">
-          <label for="friend-email">E-mail:</label>
-          <input type="email" id="friend-email" name="friend-email" />
-        </div>
-      </div>
-
       <button class="button">Enviar agora</button>
     `
   );
