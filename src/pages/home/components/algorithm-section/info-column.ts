@@ -1,9 +1,8 @@
-function InfoColumn() {
-  const $info = document.createElement('div');
+import { createElement } from 'utils/create-element';
 
-  $info.insertAdjacentHTML(
-    'afterbegin',
-    `
+function InfoColumn() {
+  const $column = createElement('div', {
+    children: `
       <h1 class="title">Ajude o algorítimo a ser mais certeiro</h1>
 
       <p class="paragraph">
@@ -22,9 +21,9 @@ function InfoColumn() {
         pharetra. Quisque ut.
       </p>
     `
-  );
+  });
 
-  return $info;
+  return $column;
 }
 
 export { InfoColumn };

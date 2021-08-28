@@ -1,17 +1,13 @@
-import './styles.css';
-
 import { createElement } from 'utils/create-element';
 
 import { ShareForm } from './share-form';
 
-function ShareSection() {
-  const $shareForm = ShareForm();
-  const $section = createElement('section', { class: 'share-section' });
+import './styles.css';
 
-  $section.appendChild($shareForm);
-  $section.insertAdjacentHTML(
-    'afterbegin',
-    `
+function ShareSection() {
+  const $section = createElement('section', {
+    class: 'share-section',
+    children: `
       <h2 class="title">Compartilhe a novidade</h2>
 
       <p class="info">
@@ -19,7 +15,9 @@ function ShareSection() {
         Preencha agora!
       </p>
     `
-  );
+  });
+
+  $section.appendChild(ShareForm());
 
   return $section;
 }

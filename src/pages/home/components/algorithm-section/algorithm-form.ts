@@ -31,10 +31,10 @@ function InputRadio({ label, id }: InputRadioProps) {
   });
 
   const $label = createElement('label', {
-    for: id
+    for: id,
+    children: label
   });
 
-  $label.textContent = label;
   $label.prepend($input);
 
   return $label;

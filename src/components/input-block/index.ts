@@ -13,9 +13,7 @@ function InputBlock({ label, name, type = 'text', ...rest }: InputBlockProps) {
   const $input = createElement('input', { name, type, id: name, ...rest });
 
   if (label) {
-    const $label = createElement('label', { for: name });
-    $label.textContent = label;
-
+    const $label = createElement('label', { for: name, children: label });
     $block.appendChild($label);
   }
 

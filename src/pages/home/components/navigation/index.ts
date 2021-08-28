@@ -2,13 +2,19 @@ import { createElement } from 'utils/create-element';
 
 import './styles.css';
 
+const LINKS_TEXT = [
+  'Conheça a Linx',
+  'Ajude o algorítimo',
+  'Seus produtos',
+  'Compartilhe'
+];
+
 function createLink(text: string) {
   const $link = createElement('a', {
     class: 'link',
-    href: '#'
+    href: '#',
+    children: text
   });
-
-  $link.textContent = text;
 
   return $link;
 }
@@ -16,14 +22,7 @@ function createLink(text: string) {
 function Navigation() {
   const $navigation = createElement('nav', { class: 'navigation' });
 
-  const linksText = [
-    'Conheça a Linx',
-    'Ajude o algorítimo',
-    'Seus produtos',
-    'Compartilhe'
-  ];
-
-  linksText.map(createLink).forEach(($link) => $navigation.appendChild($link));
+  LINKS_TEXT.map(createLink).forEach(($link) => $navigation.appendChild($link));
 
   return $navigation;
 }

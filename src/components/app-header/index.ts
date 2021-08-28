@@ -7,11 +7,9 @@ export type AppHeaderProps = {
 };
 
 function AppHeader({ children }: AppHeaderProps = {}) {
-  const $header = createElement('header', { class: 'app-header' });
-
-  $header.insertAdjacentHTML(
-    'afterbegin',
-    `
+  const $header = createElement('header', {
+    class: 'app-header',
+    children: `
       <h1 class="title">
         <span>uma seleção de produtos</span>
         especial para você
@@ -21,7 +19,7 @@ function AppHeader({ children }: AppHeaderProps = {}) {
         Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!
       </h2>
     `
-  );
+  });
 
   if (children) {
     $header.appendChild(children);

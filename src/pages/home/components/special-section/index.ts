@@ -1,8 +1,8 @@
-import './styles.css';
-
 import { createElement } from 'utils/create-element';
 
 import { ProductCard } from './product-card';
+
+import './styles.css';
 
 const PRODUCTS_DATA = Array.from({ length: 5 }).map(() => ({
   image: 'https://source.unsplash.com/random/130x130',
@@ -20,24 +20,23 @@ const PRODUCTS_DATA = Array.from({ length: 5 }).map(() => ({
 }));
 
 function SpecialSection() {
-  const $section = createElement('section', { class: 'special-section' });
   const $productsList = createElement('div', { class: 'products-list' });
-  const $buttonMore = createElement('button', { class: 'button-more' });
-
-  $buttonMore.textContent = 'Ainda mais produtos aqui!';
-  $section.appendChild($productsList);
-  $section.appendChild($buttonMore);
+  const $buttonMore = createElement('button', {
+    class: 'button-more',
+    children: 'Ainda mais produtos aqui!'
+  });
 
   PRODUCTS_DATA.map(ProductCard).forEach(($card) => {
     $productsList.appendChild($card);
   });
 
-  $section.insertAdjacentHTML(
-    'afterbegin',
-    `
-      <h2 class="title">Sua seleção especial</h2>
-    `
-  );
+  const $section = createElement('section', {
+    class: 'special-section',
+    children: '<h2 class="title">Sua seleção especial</h2>'
+  });
+
+  $section.appendChild($productsList);
+  $section.appendChild($buttonMore);
 
   return $section;
 }

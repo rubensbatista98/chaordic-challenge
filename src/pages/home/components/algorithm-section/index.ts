@@ -3,17 +3,18 @@ import './styles.css';
 import { createElement } from 'utils/create-element';
 
 import { InfoColumn } from './info-column';
-import { FormColumn } from './form-column';
+import { AlgorithmForm } from './algorithm-form';
 
 function AlgorithmSection() {
   const $algorithmSection = createElement('section', {
-    class: 'algorithm-section'
+    class: 'algorithm-section',
+    children: InfoColumn()
   });
 
-  const $infoColumn = InfoColumn();
-  const $formColumn = FormColumn();
+  const $formColumn = createElement('div', {
+    children: AlgorithmForm()
+  });
 
-  $algorithmSection.appendChild($infoColumn);
   $algorithmSection.appendChild($formColumn);
 
   return $algorithmSection;
