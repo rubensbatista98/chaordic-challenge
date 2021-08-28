@@ -1,4 +1,5 @@
 import { AppHeader } from 'components/app-header';
+import { AppFooter } from 'components/app-footer';
 
 import { Navigation } from './components/navigation';
 import { AlgorithmSection } from './components/algorithm-section';
@@ -10,6 +11,7 @@ function Home() {
 
   const $navigation = Navigation();
   const $header = AppHeader({ children: $navigation });
+  const $footer = AppFooter();
 
   const $algorithmSection = AlgorithmSection();
   const $specialSection = SpecialSection();
@@ -19,6 +21,7 @@ function Home() {
   fragment.appendChild($algorithmSection);
   fragment.appendChild($specialSection);
   fragment.appendChild($shareSection);
+  fragment.appendChild($footer);
 
   return fragment;
 }
