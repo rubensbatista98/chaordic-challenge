@@ -1,3 +1,5 @@
+import { createElement } from 'utils/create-element';
+
 import './styles.css';
 
 export type AppHeaderProps = {
@@ -5,8 +7,7 @@ export type AppHeaderProps = {
 };
 
 function AppHeader({ children }: AppHeaderProps = {}) {
-  const $header = document.createElement('header');
-  $header.className = 'app-header';
+  const $header = createElement('header', { class: 'app-header' });
 
   $header.insertAdjacentHTML(
     'afterbegin',
