@@ -1,11 +1,9 @@
 import { InputBlock } from 'components/input-block';
+import { createElement } from 'utils/create-element';
 
 function ShareForm() {
-  const $form = document.createElement('form');
-  const $inputsContainer = document.createElement('div');
-
-  $form.className = 'share-form';
-  $inputsContainer.className = 'inputs-container';
+  const $form = createElement('form', { class: 'share-form' });
+  const $inputsContainer = createElement('div', { class: 'inputs-container' });
 
   const inputName = InputBlock({
     label: 'Nome do seu amigo:',

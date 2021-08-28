@@ -1,12 +1,13 @@
 import './styles.css';
 
+import { createElement } from 'utils/create-element';
+
 import { ShareForm } from './share-form';
 
 function ShareSection() {
-  const $section = document.createElement('section');
   const $shareForm = ShareForm();
+  const $section = createElement('section', { class: 'share-section' });
 
-  $section.className = 'share-section';
   $section.appendChild($shareForm);
   $section.insertAdjacentHTML(
     'afterbegin',
