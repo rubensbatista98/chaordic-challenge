@@ -1,11 +1,14 @@
 import './styles.css';
 
+import { createElement } from 'utils/create-element';
+
 import { InfoColumn } from './info-column';
 import { FormColumn } from './form-column';
 
 function AlgorithmSection() {
-  const $algorithmSection = document.createElement('section');
-  $algorithmSection.className = 'algorithm-section';
+  const $algorithmSection = createElement('section', {
+    class: 'algorithm-section'
+  });
 
   const $infoColumn = InfoColumn();
   const $formColumn = FormColumn();

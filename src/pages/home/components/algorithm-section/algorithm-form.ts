@@ -1,4 +1,5 @@
 import { InputBlock } from 'components/input-block';
+import { createElement } from 'utils/create-element';
 
 type InputRadioProps = {
   label: string;
@@ -22,26 +23,27 @@ function FormInputs() {
 }
 
 function InputRadio({ label, id }: InputRadioProps) {
-  const $input = document.createElement('input');
+  const $input = createElement('input', {
+    type: 'radio',
+    name: 'gender',
+    id: id,
+    value: id
+  });
 
-  $input.type = 'radio';
-  $input.name = 'gender';
-  $input.id = id;
-  $input.value = id;
-
-  const $label = document.createElement('label');
+  const $label = createElement('label', {
+    for: id
+  });
 
   $label.textContent = label;
-  $label.setAttribute('for', id);
-
   $label.prepend($input);
 
   return $label;
 }
 
 function GenderRadios() {
-  const $container = document.createElement('div');
-  $container.className = 'radios-container';
+  const $container = createElement('div', {
+    class: 'radios-container'
+  });
 
   const radiosData = [
     { label: 'Masculino', id: 'masc' },
@@ -56,17 +58,12 @@ function GenderRadios() {
 }
 
 function AlgorithmForm() {
-  const $form = document.createElement('form');
-  const $button = document.createElement('button');
+  const $form = createElement('form', { class: 'algorithm-form' });
+  const $button = createElement('button', { class: 'button', type: 'submit' });
+  $button.textContent = 'Enviar';
 
   const $inputs = FormInputs();
   const $gendersRadios = GenderRadios();
-
-  $button.type = 'submit';
-  $button.textContent = 'Enviar';
-  $button.className = 'button';
-
-  $form.className = 'algorithm-form';
 
   $form.appendChild($inputs);
   $form.appendChild($gendersRadios);
