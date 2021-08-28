@@ -1,8 +1,9 @@
+import { createElement } from 'utils/create-element';
+
 import './styles.css';
 
 function AppFooter() {
-  const $footer = document.createElement('footer');
-  $footer.className = 'app-footer';
+  const $footer = createElement('footer', { class: 'app-footer' });
 
   $footer.insertAdjacentHTML(
     'afterbegin',
