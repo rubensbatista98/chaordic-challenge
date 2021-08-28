@@ -1,3 +1,5 @@
+import { createElement } from 'utils/create-element';
+
 type ProductCardProps = {
   image: string;
   name: string;
@@ -10,25 +12,19 @@ type ProductCardProps = {
   };
 };
 
-function ProductCard({
-  image,
-  name,
-  description,
-  installments,
-  oldPrice,
-  price
-}: ProductCardProps) {
-  const $card = document.createElement('article');
-  const $image = document.createElement('div');
-  const $body = document.createElement('div');
-  const $button = document.createElement('button');
+function ProductCard(props: ProductCardProps) {
+  const { image, name, description, installments, oldPrice, price } = props;
 
-  $card.className = 'product-card';
-  $image.className = 'image';
-  $body.className = 'body';
-  $button.className = 'button';
+  const $card = createElement('article', { class: 'product-card' });
+  const $image = createElement('div', { class: 'image' });
+  const $body = createElement('div', { class: 'body' });
+  const $button = createElement('button', { class: 'button' });
 
   $button.textContent = 'Comprar';
+
+  $body.appendChild($button);
+  $card.appendChild($image);
+  $card.appendChild($body);
 
   $image.insertAdjacentHTML(
     'afterbegin',
@@ -53,10 +49,6 @@ function ProductCard({
     </div>
   `
   );
-
-  $body.appendChild($button);
-  $card.appendChild($image);
-  $card.appendChild($body);
 
   return $card;
 }
