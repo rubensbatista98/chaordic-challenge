@@ -1,26 +1,27 @@
+import { createElement } from 'utils/create-element';
+
 import './styles.css';
 
 function createLink(text: string) {
-  const $link = document.createElement('a');
+  const $link = createElement('a', {
+    class: 'link',
+    href: '#'
+  });
 
-  $link.className = 'link';
   $link.textContent = text;
-
-  $link.setAttribute('href', '#');
 
   return $link;
 }
 
 function Navigation() {
+  const $navigation = createElement('nav', { class: 'navigation' });
+
   const linksText = [
     'Conheça a Linx',
     'Ajude o algorítimo',
     'Seus produtos',
     'Compartilhe'
   ];
-
-  const $navigation = document.createElement('nav');
-  $navigation.className = 'navigation';
 
   linksText.map(createLink).forEach(($link) => $navigation.appendChild($link));
 
