@@ -5,7 +5,7 @@ import './styles.css';
 type InputRadioProps = {
   label: string;
   name: string;
-};
+} & Record<string, any>;
 
 function InputRadio({ label, name, ...rest }: InputRadioProps) {
   const $label = createElement('label', {

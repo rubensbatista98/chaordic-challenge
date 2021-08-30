@@ -6,7 +6,7 @@ type InputBlockProps = {
   label?: string;
   type?: string;
   name: string;
-};
+} & Record<string, any>;
 
 function InputBlock({ label, name, type = 'text', ...rest }: InputBlockProps) {
   const $block = createElement('div', { class: 'input-block' });
