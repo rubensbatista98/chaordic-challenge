@@ -1,11 +1,7 @@
 import { InputBlock } from 'components/input-block';
+import { InputRadio } from 'components/input-radio';
 import { Button } from 'components/button';
 import { createElement } from 'utils/create-element';
-
-type InputRadioProps = {
-  label: string;
-  id: string;
-};
 
 function FormInputs() {
   const fragment = document.createDocumentFragment();
@@ -23,37 +19,19 @@ function FormInputs() {
   return fragment;
 }
 
-function InputRadio({ label, id }: InputRadioProps) {
-  const $input = createElement('input', {
-    type: 'radio',
-    name: 'gender',
-    id: id,
-    value: id
-  });
-
-  const $label = createElement('label', {
-    for: id,
-    children: label
-  });
-
-  $label.prepend($input);
-
-  return $label;
-}
-
 function GenderRadios() {
   const $container = createElement('div', {
     class: 'radios-container'
   });
 
   const radiosData = [
-    { label: 'Masculino', id: 'masc' },
-    { label: 'Feminino', id: 'fem' }
+    { label: 'Masculino', name: 'gender', id: 'masc' },
+    { label: 'Feminino', name: 'gender', id: 'fem' }
   ];
 
   radiosData
     .map(InputRadio)
-    .forEach(($radio) => $container.appendChild($radio));
+    .forEach((radio) => $container.appendChild(radio.$label));
 
   return $container;
 }
