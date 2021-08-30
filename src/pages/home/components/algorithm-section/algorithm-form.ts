@@ -47,7 +47,7 @@ function GenderRadios() {
 
   const radiosData = [
     { label: 'Masculino', id: 'masc' },
-    { label: 'Masculino', id: 'fem' }
+    { label: 'Feminino', id: 'fem' }
   ];
 
   radiosData
