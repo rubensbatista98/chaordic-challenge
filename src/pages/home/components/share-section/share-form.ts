@@ -19,8 +19,7 @@ function ShareForm() {
     name: 'friend-email'
   });
 
-  $inputsContainer.appendChild(inputName.$block);
-  $inputsContainer.appendChild(inputEmail.$block);
+  $inputsContainer.append(inputName.$block, inputEmail.$block);
   $form.prepend($inputsContainer);
 
   return $form;

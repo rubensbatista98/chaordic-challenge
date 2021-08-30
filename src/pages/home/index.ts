@@ -8,20 +8,15 @@ import { ShareSection } from './components/share-section';
 
 function Home() {
   const fragment = document.createDocumentFragment();
-
   const $navigation = Navigation();
-  const $header = AppHeader({ children: $navigation });
-  const $footer = AppFooter();
 
-  const $algorithmSection = AlgorithmSection();
-  const $specialSection = SpecialSection();
-  const $shareSection = ShareSection();
-
-  fragment.appendChild($header);
-  fragment.appendChild($algorithmSection);
-  fragment.appendChild($specialSection);
-  fragment.appendChild($shareSection);
-  fragment.appendChild($footer);
+  fragment.append(
+    AppHeader({ children: $navigation }),
+    AlgorithmSection(),
+    SpecialSection(),
+    ShareSection(),
+    AppFooter()
+  );
 
   return fragment;
 }

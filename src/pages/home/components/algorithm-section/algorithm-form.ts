@@ -6,15 +6,15 @@ import { createElement } from 'utils/create-element';
 function FormInputs() {
   const fragment = document.createDocumentFragment();
 
-  const inputsData = [
-    { label: 'Nome:', name: 'name' },
-    { label: 'CPF:', name: 'cpf' },
-    { label: 'E-mail:', type: 'email', name: 'email' }
-  ];
+  const inputName = InputBlock({ label: 'Nome:', name: 'name' });
+  const inputCpf = InputBlock({ label: 'CPF:', name: 'cpf' });
+  const inputEmail = InputBlock({
+    label: 'E-mail:',
+    type: 'email',
+    name: 'email'
+  });
 
-  inputsData
-    .map(InputBlock)
-    .forEach(({ $block }) => fragment.appendChild($block));
+  fragment.append(inputName.$block, inputCpf.$block, inputEmail.$block);
 
   return fragment;
 }
@@ -24,14 +24,14 @@ function GenderRadios() {
     class: 'radios-container'
   });
 
-  const radiosData = [
-    { label: 'Masculino', name: 'gender', id: 'masc' },
-    { label: 'Feminino', name: 'gender', id: 'fem' }
-  ];
+  const radioFem = InputRadio({ label: 'Feminino', name: 'gender', id: 'fem' });
+  const radioMasc = InputRadio({
+    label: 'Masculino',
+    name: 'gender',
+    id: 'masc'
+  });
 
-  radiosData
-    .map(InputRadio)
-    .forEach((radio) => $container.appendChild(radio.$label));
+  $container.append(radioMasc.$label, radioFem.$label);
 
   return $container;
 }
@@ -39,13 +39,10 @@ function GenderRadios() {
 function AlgorithmForm() {
   const $form = createElement('form', { class: 'algorithm-form' });
   const $button = Button({ type: 'submit', full: true, children: 'Enviar' });
-
   const $inputs = FormInputs();
   const $gendersRadios = GenderRadios();
 
-  $form.appendChild($inputs);
-  $form.appendChild($gendersRadios);
-  $form.appendChild($button);
+  $form.append($inputs, $gendersRadios, $button);
 
   return $form;
 }

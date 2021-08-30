@@ -27,18 +27,13 @@ function SpecialSection() {
     variant: 'secondary',
     children: 'Ainda mais produtos aqui!'
   });
-
-  PRODUCTS_DATA.map(ProductCard).forEach(($card) => {
-    $productsList.appendChild($card);
-  });
-
   const $section = createElement('section', {
     class: 'special-section',
     children: '<h2 class="title">Sua seleção especial</h2>'
   });
 
-  $section.appendChild($productsList);
-  $section.appendChild($buttonMore);
+  $productsList.append(...PRODUCTS_DATA.map(ProductCard));
+  $section.append($productsList, $buttonMore);
 
   return $section;
 }
