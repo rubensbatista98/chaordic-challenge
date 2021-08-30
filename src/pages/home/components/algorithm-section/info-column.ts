@@ -3,7 +3,7 @@ import { createElement } from 'utils/create-element';
 function InfoColumn() {
   const $column = createElement('div', {
     children: `
-      <h1 class="title">Ajude o algorítimo a ser mais certeiro</h1>
+      <h1 class="title">Ajude o algorítmo a ser mais certeiro</h1>
 
       <p class="paragraph">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies

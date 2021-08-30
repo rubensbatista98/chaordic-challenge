@@ -11,7 +11,7 @@ function FormInputs() {
   const fragment = document.createDocumentFragment();
 
   const inputsData = [
-    { label: 'Name:', name: 'name' },
+    { label: 'Nome:', name: 'name' },
     { label: 'CPF:', name: 'cpf' },
     { label: 'E-mail:', type: 'email', name: 'email' }
   ];
