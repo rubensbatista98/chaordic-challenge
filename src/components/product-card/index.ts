@@ -1,6 +1,8 @@
 import { Button } from 'components/button';
 import { createElement } from 'utils/create-element';
 
+import './styles.css';
+
 type ProductCardProps = {
   image: string;
   name: string;

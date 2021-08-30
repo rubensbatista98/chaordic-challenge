@@ -1,7 +1,6 @@
 import { Button } from 'components/button';
+import { ProductCard } from 'components/product-card';
 import { createElement } from 'utils/create-element';
-
-import { ProductCard } from './product-card';
 
 import './styles.css';
 

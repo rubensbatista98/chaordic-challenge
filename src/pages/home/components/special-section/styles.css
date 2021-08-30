@@ -43,59 +43,6 @@
   padding: var(--spacing-3) var(--spacing-1) 0;
 }
 
-.product-card {
-  display: flex;
-  gap: var(--spacing-3);
-}
-
-.product-card > .image {
-  inline-size: 17rem;
-  block-size: 13rem;
-}
-
-.product-card > .image > img {
-  inline-size: 100%;
-  block-size: 100%;
-
-  object-fit: cover;
-}
-
-.product-card > .body {
-  flex-grow: 1;
-}
-
-.product-card > .body > .name {
-  font-size: var(--fs-2);
-  font-weight: var(--fw-regular);
-}
-
-.product-card > .body > .description {
-  font-size: var(--fs-1);
-  line-height: 1.5;
-
-  display: none;
-  margin-block-start: var(--spacing-1);
-}
-
-.product-card > .body > .price {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-1);
-
-  font-size: var(--fs-1);
-
-  margin-block: var(--spacing-1);
-}
-
-.product-card .price > .current {
-  font-size: var(--fs-3);
-  font-weight: var(--fw-bold);
-}
-
-.product-card > .body > .button {
-  padding-block: var(--spacing-1);
-}
-
 /* 37.5rem = 600px / 16px */
 @media (min-width: 37.5rem) {
   .special-section > .title {
@@ -105,20 +52,6 @@
   .special-section > .products-list {
     --column-size: 20rem;
     gap: var(--spacing-5);
-  }
-
-  .product-card {
-    flex-direction: column;
-  }
-
-  .product-card > .image {
-    inline-size: 100%;
-    block-size: 15rem;
-  }
-
-  .product-card > .body > .description {
-    display: block;
-    margin-block-start: var(--spacing-1);
   }
 }
 
