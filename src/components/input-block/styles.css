@@ -17,5 +17,11 @@
   padding: var(--spacing-1);
   border: 2px solid var(--surface-2);
   border-radius: 5px;
+
   outline: none;
+}
+
+.input-block > input:focus {
+  box-shadow: 2px 2px 2px hsla(270, 100%, 80%, 1);
+  transition: box-shadow 300ms ease-out;
 }
