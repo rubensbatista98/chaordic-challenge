@@ -1,0 +1,39 @@
+.radio-label {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-bold);
+  color: var(--text-2);
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.radio-label > input {
+  --size: 1.5rem;
+
+  appearance: none;
+
+  inline-size: var(--size);
+  block-size: var(--size);
+
+  border: 2px solid var(--surface-2);
+  border-radius: 50%;
+  margin-inline-end: 0.5rem;
+
+  position: relative;
+}
+
+.radio-label > input:checked::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  inline-size: 65%;
+  block-size: 65%;
+
+  background-color: var(--surface-2);
+  border-radius: 50%;
+  margin: auto;
+}
