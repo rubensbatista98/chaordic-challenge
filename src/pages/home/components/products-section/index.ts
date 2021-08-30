@@ -19,7 +19,7 @@ const PRODUCTS_DATA = Array.from({ length: 5 }).map(() => ({
   }
 }));
 
-function SpecialSection() {
+function ProductsSection() {
   const $productsList = createElement('div', { class: 'products-list' });
   const $buttonMore = Button({
     class: 'button-more',
@@ -27,7 +27,7 @@ function SpecialSection() {
     children: 'Ainda mais produtos aqui!'
   });
   const $section = createElement('section', {
-    class: 'home-section special-section',
+    class: 'home-section products-section',
     children: '<h2 class="title">Sua seleção especial</h2>'
   });
 
@@ -37,4 +37,4 @@ function SpecialSection() {
   return $section;
 }
 
-export { SpecialSection };
+export { ProductsSection };

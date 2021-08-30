@@ -4,7 +4,7 @@ import { createElement } from 'utils/create-element';
 
 import { Navigation } from './components/navigation';
 import { AlgorithmSection } from './components/algorithm-section';
-import { SpecialSection } from './components/special-section';
+import { ProductsSection } from './components/products-section';
 import { ShareSection } from './components/share-section';
 
 import './styles.css';
@@ -14,7 +14,7 @@ function Home() {
   const $container = createElement('div', { class: 'container' });
   const $navigation = Navigation();
 
-  $container.append(AlgorithmSection(), SpecialSection(), ShareSection());
+  $container.append(AlgorithmSection(), ProductsSection(), ShareSection());
   fragment.append(
     AppHeader({ children: $navigation }),
     $container,
