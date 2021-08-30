@@ -1,3 +1,4 @@
+import { Button } from 'components/button';
 import { createElement } from 'utils/create-element';
 
 type ProductCardProps = {
@@ -42,9 +43,9 @@ function ProductCard(props: ProductCardProps) {
     `
   });
 
-  const $button = createElement('button', {
-    class: 'button',
-    children: 'Comprar'
+  const $button = Button({
+    children: 'Comprar',
+    full: true
   });
 
   $body.appendChild($button);

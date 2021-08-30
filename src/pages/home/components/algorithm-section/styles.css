@@ -34,25 +34,6 @@
   margin-block-start: var(--spacing-3);
 }
 
-.algorithm-form > .button {
-  width: 100%;
-
-  font-family: inherit;
-  font-size: var(--fs-3);
-  font-weight: var(--fw-bold);
-  text-align: center;
-  text-transform: uppercase;
-
-  color: var(--text-3);
-  background-color: var(--surface-2);
-
-  padding-block: 1.2rem;
-  border: 1px solid var(--surface-2);
-  border-radius: 4px;
-
-  cursor: pointer;
-}
-
 .algorithm-form > .input-block {
   margin-block-end: var(--spacing-2);
 }

@@ -1,3 +1,4 @@
+import { Button } from 'components/button';
 import { createElement } from 'utils/create-element';
 
 import { ProductCard } from './product-card';
@@ -21,8 +22,9 @@ const PRODUCTS_DATA = Array.from({ length: 5 }).map(() => ({
 
 function SpecialSection() {
   const $productsList = createElement('div', { class: 'products-list' });
-  const $buttonMore = createElement('button', {
+  const $buttonMore = Button({
     class: 'button-more',
+    variant: 'secondary',
     children: 'Ainda mais produtos aqui!'
   });
 

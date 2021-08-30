@@ -1,13 +1,12 @@
 import { InputBlock } from 'components/input-block';
+import { Button } from 'components/button';
 import { createElement } from 'utils/create-element';
 
 function ShareForm() {
   const $inputsContainer = createElement('div', { class: 'inputs-container' });
   const $form = createElement('form', {
     class: 'share-form',
-    children: `
-      <button class="button">Enviar agora</button>
-    `
+    children: Button({ children: 'Enviar agora' })
   });
 
   const inputName = InputBlock({

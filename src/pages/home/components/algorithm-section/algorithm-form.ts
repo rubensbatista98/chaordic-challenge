@@ -1,4 +1,5 @@
 import { InputBlock } from 'components/input-block';
+import { Button } from 'components/button';
 import { createElement } from 'utils/create-element';
 
 type InputRadioProps = {
@@ -59,8 +60,7 @@ function GenderRadios() {
 
 function AlgorithmForm() {
   const $form = createElement('form', { class: 'algorithm-form' });
-  const $button = createElement('button', { class: 'button', type: 'submit' });
-  $button.textContent = 'Enviar';
+  const $button = Button({ type: 'submit', full: true, children: 'Enviar' });
 
   const $inputs = FormInputs();
   const $gendersRadios = GenderRadios();

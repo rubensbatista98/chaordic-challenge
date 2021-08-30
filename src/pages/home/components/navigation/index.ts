@@ -1,3 +1,5 @@
+import { Button } from 'components/button';
+
 import { createElement } from 'utils/create-element';
 
 import './styles.css';
@@ -8,21 +10,21 @@ const LINKS_TEXT = [
   'Seus produtos',
   'Compartilhe'
 ];
-
-function createLink(text: string) {
-  const $link = createElement('a', {
-    class: 'link',
-    href: '#',
-    children: text
-  });
-
-  return $link;
-}
-
 function Navigation() {
   const $navigation = createElement('nav', { class: 'navigation' });
 
-  LINKS_TEXT.map(createLink).forEach(($link) => $navigation.appendChild($link));
+  LINKS_TEXT.forEach((text) => {
+    $navigation.appendChild(
+      Button<HTMLAnchorElement>({
+        class: 'link',
+        asLink: true,
+        href: '#',
+        variant: 'secondary',
+        full: true,
+        children: text
+      })
+    );
+  });
 
   return $navigation;
 }

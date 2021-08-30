@@ -24,22 +24,12 @@
 }
 
 .special-section > .button-more {
-  font-family: inherit;
-  font-size: var(--fs-3);
-  font-weight: var(--fw-bold);
-  text-align: center;
-
+  text-transform: none;
   color: var(--text-2);
-  background-color: var(--surface-1);
-
-  border: 1px solid var(--surface-2);
-  border-radius: 4px;
 
   display: block;
   padding: var(--spacing-1) var(--spacing-4);
   margin: 5rem auto 0;
-
-  cursor: pointer;
 }
 
 .special-section > .products-list {
@@ -103,22 +93,7 @@
 }
 
 .product-card > .body > .button {
-  inline-size: 100%;
-
-  font-family: inherit;
-  font-size: var(--fs-3);
-  font-weight: var(--fw-bold);
-  text-align: center;
-  text-transform: uppercase;
-
-  color: var(--text-3);
-  background-color: var(--surface-2);
-
   padding-block: var(--spacing-1);
-  border: 1px solid var(--surface-2);
-  border-radius: 4px;
-
-  cursor: pointer;
 }
 
 /* 37.5rem = 600px / 16px */

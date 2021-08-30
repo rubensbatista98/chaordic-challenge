@@ -38,23 +38,9 @@
 }
 
 .share-form > .button {
-  font-family: inherit;
-  font-size: var(--fs-3);
-  font-weight: var(--fw-bold);
-  text-align: center;
-  text-transform: uppercase;
-
-  color: var(--text-3);
-  background-color: var(--surface-2);
-
-  border: 1px solid var(--surface-2);
-  border-radius: 4px;
-
   display: block;
-  padding: 1.2rem 8rem;
+  padding-inline: 8rem;
   margin: 0 auto;
-
-  cursor: pointer;
 }
 
 .share-section > .share-form > .inputs-container {
