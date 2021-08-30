@@ -20,6 +20,10 @@
   z-index: -1;
 }
 
+.app-footer > p > span {
+  display: block;
+}
+
 /* 57.5rem = 920px / 16px */
 @media (min-width: 57.5rem) {
   .app-footer {

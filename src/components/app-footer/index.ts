@@ -7,8 +7,11 @@ function AppFooter() {
     class: 'app-footer',
     children: `
       <p>Testando suas habilidades em HTML, CSS e JS.</p>
-      <p>Linx Impulse</p>
-      <p>2019</p>
+
+      <p>
+        <span>Linx Impulse</span>
+        <span>2019</span>
+      </p>
     `
   });
 
