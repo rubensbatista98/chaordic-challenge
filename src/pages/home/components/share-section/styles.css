@@ -1,26 +1,5 @@
 .share-section {
-  max-inline-size: 92rem;
-  margin: 0 auto 7rem;
-}
-
-.share-section > .title {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: var(--spacing-2);
-
-  font-size: var(--fs-4);
-  font-weight: var(--fw-bold);
-  text-align: center;
-  color: var(--text-2);
-}
-
-.share-section > .title::before,
-.share-section > .title::after {
-  content: '';
-
-  block-size: 2px;
-  background-color: var(--text-2);
+  margin-block: 0 7rem;
 }
 
 .share-section > .info {

@@ -1,13 +1,11 @@
 .algorithm-section {
-  max-width: 92rem;
-
   display: grid;
   grid-template-columns: minmax(auto, 50rem);
   justify-content: center;
   gap: var(--spacing-4);
 
   padding-inline: var(--spacing-2);
-  margin: var(--spacing-4) auto 0;
+  margin-block: var(--spacing-4) 0;
 }
 
 @media (min-width: 60rem) {

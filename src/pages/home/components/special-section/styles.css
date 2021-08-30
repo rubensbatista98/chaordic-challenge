@@ -1,26 +1,5 @@
 .special-section {
-  max-inline-size: 92rem;
-  margin: 9rem auto 13rem;
-}
-
-.special-section > .title {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: var(--spacing-2);
-
-  font-size: var(--fs-4);
-  font-weight: var(--fw-bold);
-  text-align: center;
-  color: var(--text-2);
-}
-
-.special-section > .title::before,
-.special-section > .title::after {
-  content: '';
-
-  block-size: 2px;
-  background-color: var(--text-2);
+  margin-block: 9rem 13rem;
 }
 
 .special-section > .button-more {

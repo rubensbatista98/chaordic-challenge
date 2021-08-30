@@ -27,7 +27,7 @@ function SpecialSection() {
     children: 'Ainda mais produtos aqui!'
   });
   const $section = createElement('section', {
-    class: 'special-section',
+    class: 'home-section special-section',
     children: '<h2 class="title">Sua seleção especial</h2>'
   });
 
