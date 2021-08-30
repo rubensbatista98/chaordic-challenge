@@ -7,7 +7,7 @@ import { AlgorithmForm } from './algorithm-form';
 
 function AlgorithmSection() {
   const $algorithmSection = createElement('section', {
-    class: 'algorithm-section',
+    id: 'algorithm-section',
     children: InfoColumn()
   });
 

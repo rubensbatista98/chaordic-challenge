@@ -27,7 +27,8 @@ function ProductsSection() {
     children: 'Ainda mais produtos aqui!'
   });
   const $section = createElement('section', {
-    class: 'home-section products-section',
+    id: 'products-section',
+    class: 'home-section',
     children: '<h2 class="title">Sua seleção especial</h2>'
   });
 

@@ -1,8 +1,8 @@
-.products-section {
+#products-section {
   margin-block: 9rem 13rem;
 }
 
-.products-section > .button-more {
+#products-section > .button-more {
   text-transform: none;
   color: var(--text-2);
 
@@ -11,7 +11,7 @@
   margin: 5rem auto 0;
 }
 
-.products-section > .products-list {
+#products-section > .products-list {
   --column-size: 49rem;
 
   display: grid;
@@ -24,11 +24,11 @@
 
 /* 37.5rem = 600px / 16px */
 @media (min-width: 37.5rem) {
-  .products-section > .title {
+  #products-section > .title {
     margin-block-end: 5rem;
   }
 
-  .products-section > .products-list {
+  #products-section > .products-list {
     --column-size: 20rem;
     gap: var(--spacing-5);
   }
@@ -36,7 +36,7 @@
 
 /* 58.75rem = 940px / 16px */
 @media (min-width: 58.7rem) {
-  .products-section > .products-list {
+  #products-section > .products-list {
     padding-inline: 0;
   }
 }

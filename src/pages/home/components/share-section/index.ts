@@ -6,7 +6,8 @@ import './styles.css';
 
 function ShareSection() {
   const $section = createElement('section', {
-    class: 'home-section share-section',
+    id: 'share-section',
+    class: 'home-section',
     children: `
       <h2 class="title">Compartilhe a novidade</h2>
 
