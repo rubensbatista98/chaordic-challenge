@@ -1,0 +1,45 @@
+.button {
+  display: inline-block;
+
+  font-family: inherit;
+  font-size: var(--fs-3);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+
+  outline: none;
+  border: 1px solid var(--surface-2);
+  border-radius: 4px;
+  padding: var(--spacing-1) var(--spacing-3);
+
+  cursor: pointer;
+
+  will-change: transform;
+  transition: transform 200ms ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--text-1);
+  outline-offset: 3px;
+}
+
+.button.-full {
+  display: block;
+  inline-size: 100%;
+  padding-block: 1.2rem;
+}
+
+.button.-primary {
+  color: var(--text-3);
+  background-color: var(--surface-2);
+}
+
+.button.-secondary {
+  color: var(--text-1);
+  background-color: var(--surface-1);
+}

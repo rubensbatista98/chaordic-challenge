@@ -1,6 +1,6 @@
 type ElementTag = keyof HTMLElementTagNameMap;
 
-type Props = Record<string, any> & {
+export type Props = Record<string, any> & {
   children?: string | DocumentFragment | HTMLElement;
 };
 
