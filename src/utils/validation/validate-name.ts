@@ -5,7 +5,7 @@ function validateName(name: string) {
 
   const hasLessThan2Char = name.trim().length < 2;
 
-  if (hasLessThan2Char) return 'Nome deve ter mais de 2 letras';
+  if (hasLessThan2Char) return 'Nome deve ter pelo menos 2 letras';
 
   return null;
 }
