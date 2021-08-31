@@ -10,6 +10,14 @@
   color: var(--text-2);
 }
 
+.input-block[data-required] > label::after {
+  content: '*';
+  color: var(--error);
+
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+}
+
 .input-block > input {
   font-size: var(--fs-2);
   font-family: inherit;
@@ -29,6 +37,6 @@
 }
 
 .input-block > input:invalid {
-  --shadow-color: hsl(360 100% 50%);
+  --shadow-color: var(--error);
   border-color: var(--shadow-color);
 }
