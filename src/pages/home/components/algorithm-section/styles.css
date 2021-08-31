@@ -31,15 +31,3 @@
 #algorithm-section .paragraph + .paragraph {
   margin-block-start: var(--spacing-3);
 }
-
-.algorithm-form > .input-block {
-  margin-block-end: var(--spacing-2);
-}
-
-.algorithm-form > .radios-container {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-5);
-
-  margin-block-end: var(--spacing-2);
-}

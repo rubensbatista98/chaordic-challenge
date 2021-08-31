@@ -1,0 +1,11 @@
+.algorithm-form > .input-block {
+  margin-block-end: var(--spacing-2);
+}
+
+.algorithm-form > .radios-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-5);
+
+  margin-block-end: var(--spacing-2);
+}
