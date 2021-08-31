@@ -2,20 +2,23 @@ import { validateName } from './validate-name';
 import { validateEmail } from './validate-email';
 import { validateCpf } from './validate-cpf';
 
-const fieldsValidations: Record<string, (value: string) => string | null> = {
+export type FieldValidationType = 'name' | 'email' | 'cpf';
+export type FnValidation = (value: string) => string | null;
+
+const fieldsValidations: Record<FieldValidationType, FnValidation> = {
   name: validateName,
   cpf: validateCpf,
   email: validateEmail
 };
 
-function formValidation($input: HTMLInputElement) {
-  const fieldValidation = fieldsValidations[$input.name];
+function formValidation(type: FieldValidationType) {
+  const fieldValidation = fieldsValidations[type];
 
-  if (fieldValidation) {
-    return fieldValidation($input.value);
-  }
+  return ($input: HTMLInputElement) => {
+    if (fieldValidation) return fieldValidation($input.value);
 
-  return;
+    return;
+  };
 }
 
 export { formValidation };

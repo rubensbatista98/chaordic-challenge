@@ -4,9 +4,10 @@ import { Button } from 'components/button';
 
 import { createElement } from 'utils/create-element';
 import { formValidation } from 'utils/validation';
+import type { FieldValidationType } from 'utils/validation';
 
-function setInputValidity($input: HTMLInputElement) {
-  const error = formValidation($input);
+function setInputValidity(type: FieldValidationType, $input: HTMLInputElement) {
+  const error = formValidation(type)($input);
   $input.setCustomValidity(error ?? '');
 }
 
@@ -14,8 +15,10 @@ function handleInput(event: Event) {
   (event.currentTarget as HTMLInputElement).setCustomValidity('');
 }
 
-function handleBlur(event: Event) {
-  setInputValidity(event.currentTarget as HTMLInputElement);
+function handleBlur(type: FieldValidationType) {
+  return (event: Event) => {
+    setInputValidity(type, event.currentTarget as HTMLInputElement);
+  };
 }
 
 function handleSubmit(event: Event) {
@@ -24,7 +27,12 @@ function handleSubmit(event: Event) {
   const $form = event.currentTarget as HTMLFormElement;
 
   Array.from($form.elements).forEach(($element) => {
-    setInputValidity($element as HTMLInputElement);
+    if (isInput($element)) {
+      setInputValidity(
+        $element.name as FieldValidationType,
+        $element as HTMLInputElement
+      );
+    }
   });
 }
 
@@ -70,9 +78,9 @@ function AlgorithmForm() {
   inputEmail.$input.addEventListener('input', handleInput);
   inputCpf.$input.addEventListener('input', handleInput);
 
-  inputName.$input.addEventListener('blur', handleBlur);
-  inputEmail.$input.addEventListener('blur', handleBlur);
-  inputCpf.$input.addEventListener('blur', handleBlur);
+  inputName.$input.addEventListener('blur', handleBlur('name'));
+  inputEmail.$input.addEventListener('blur', handleBlur('email'));
+  inputCpf.$input.addEventListener('blur', handleBlur('cpf'));
 
   $form.append(
     inputName.$block,
@@ -85,6 +93,10 @@ function AlgorithmForm() {
   $form.addEventListener('submit', handleSubmit);
 
   return $form;
+}
+
+function isInput($element: Element): $element is HTMLInputElement {
+  return !!($element as HTMLInputElement)?.name;
 }
 
 export { AlgorithmForm };
