@@ -1,6 +1,6 @@
 import { createElement } from 'utils/create-element';
 
-import { ShareForm } from './share-form';
+import { ShareForm } from '../share-form';
 
 import './styles.css';
 

@@ -9,32 +9,3 @@
 
   margin: var(--spacing-5) var(--spacing-1);
 }
-
-#share-section > .share-form {
-  max-inline-size: 72rem;
-  padding-inline: var(--spacing-1);
-  margin-inline: auto;
-}
-
-.share-form > .button {
-  display: block;
-  padding-inline: 8rem;
-  margin: 0 auto;
-}
-
-#share-section > .share-form > .inputs-container {
-  display: grid;
-  grid-template-columns: minmax(auto, 40rem);
-  justify-content: center;
-  gap: var(--spacing-2);
-
-  margin-block-end: var(--spacing-5);
-}
-
-/* 37.5rem = 600px / 16px */
-@media (min-width: 37.5rem) {
-  #share-section > .share-form > .inputs-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-5);
-  }
-}
