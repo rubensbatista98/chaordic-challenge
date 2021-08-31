@@ -21,7 +21,14 @@
   outline: none;
 }
 
-.input-block > input:focus {
-  box-shadow: 2px 2px 2px hsla(270, 100%, 80%, 1);
+.input-block > input:is(:focus, :invalid) {
+  --shadow-color: hsl(270 100% 80%);
+
+  box-shadow: 2px 2px 2px var(--shadow-color);
   transition: box-shadow 300ms ease-out;
+}
+
+.input-block > input:invalid {
+  --shadow-color: hsl(360 100% 50%);
+  border-color: var(--shadow-color);
 }

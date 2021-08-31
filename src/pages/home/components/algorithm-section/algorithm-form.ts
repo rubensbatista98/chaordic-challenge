@@ -1,22 +1,31 @@
 import { InputBlock } from 'components/input-block';
 import { InputRadio } from 'components/input-radio';
 import { Button } from 'components/button';
+
 import { createElement } from 'utils/create-element';
+import { formValidation } from 'utils/validation';
 
-function FormInputs() {
-  const fragment = document.createDocumentFragment();
+function setInputValidity($input: HTMLInputElement) {
+  const error = formValidation($input);
+  $input.setCustomValidity(error ?? '');
+}
 
-  const inputName = InputBlock({ label: 'Nome:', name: 'name' });
-  const inputCpf = InputBlock({ label: 'CPF:', name: 'cpf' });
-  const inputEmail = InputBlock({
-    label: 'E-mail:',
-    type: 'email',
-    name: 'email'
+function handleInput(event: Event) {
+  (event.currentTarget as HTMLInputElement).setCustomValidity('');
+}
+
+function handleBlur(event: Event) {
+  setInputValidity(event.currentTarget as HTMLInputElement);
+}
+
+function handleSubmit(event: Event) {
+  event.preventDefault();
+
+  const $form = event.currentTarget as HTMLFormElement;
+
+  Array.from($form.elements).forEach(($element) => {
+    setInputValidity($element as HTMLInputElement);
   });
-
-  fragment.append(inputName.$block, inputCpf.$block, inputEmail.$block);
-
-  return fragment;
 }
 
 function GenderRadios() {
@@ -24,11 +33,17 @@ function GenderRadios() {
     class: 'radios-container'
   });
 
-  const radioFem = InputRadio({ label: 'Feminino', name: 'gender', id: 'fem' });
+  const radioFem = InputRadio({
+    label: 'Feminino',
+    name: 'gender',
+    value: 'F',
+    checked: true
+  });
+
   const radioMasc = InputRadio({
     label: 'Masculino',
     name: 'gender',
-    id: 'masc'
+    value: 'M'
   });
 
   $container.append(radioMasc.$label, radioFem.$label);
@@ -39,10 +54,35 @@ function GenderRadios() {
 function AlgorithmForm() {
   const $form = createElement('form', { class: 'algorithm-form' });
   const $button = Button({ type: 'submit', full: true, children: 'Enviar' });
-  const $inputs = FormInputs();
+  const inputCpf = InputBlock({ label: 'CPF:', name: 'cpf' });
+  const inputName = InputBlock({
+    label: 'Nome:',
+    name: 'name'
+  });
+  const inputEmail = InputBlock({
+    label: 'E-mail:',
+    type: 'email',
+    name: 'email'
+  });
   const $gendersRadios = GenderRadios();
 
-  $form.append($inputs, $gendersRadios, $button);
+  inputName.$input.addEventListener('input', handleInput);
+  inputEmail.$input.addEventListener('input', handleInput);
+  inputCpf.$input.addEventListener('input', handleInput);
+
+  inputName.$input.addEventListener('blur', handleBlur);
+  inputEmail.$input.addEventListener('blur', handleBlur);
+  inputCpf.$input.addEventListener('blur', handleBlur);
+
+  $form.append(
+    inputName.$block,
+    inputEmail.$block,
+    inputCpf.$block,
+    $gendersRadios,
+    $button
+  );
+
+  $form.addEventListener('submit', handleSubmit);
 
   return $form;
 }
