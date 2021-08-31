@@ -13,15 +13,17 @@ function AlgorithmForm() {
   const $button = Button({ type: 'submit', full: true, children: 'Enviar' });
   const $gendersRadios = RadiosWrapper();
 
-  const inputCpf = InputBlock({ label: 'CPF:', name: 'cpf' });
+  const inputCpf = InputBlock({ label: 'CPF:', name: 'cpf', required: true });
   const inputName = InputBlock({
     label: 'Nome:',
-    name: 'name'
+    name: 'name',
+    required: true
   });
   const inputEmail = InputBlock({
     label: 'E-mail:',
     type: 'email',
-    name: 'email'
+    name: 'email',
+    required: true
   });
 
   function handleInput(event: Event) {

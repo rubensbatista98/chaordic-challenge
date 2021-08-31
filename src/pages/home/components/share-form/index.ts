@@ -16,13 +16,15 @@ function ShareForm() {
 
   const inputName = InputBlock({
     label: 'Nome do seu amigo:',
-    name: 'friend-name'
+    name: 'friend-name',
+    required: true
   });
 
   const inputEmail = InputBlock({
     label: 'E-mail:',
     name: 'friend-email',
-    type: 'email'
+    type: 'email',
+    required: true
   });
 
   function handleInput(event: Event) {
