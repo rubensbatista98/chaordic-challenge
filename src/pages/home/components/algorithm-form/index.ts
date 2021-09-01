@@ -8,7 +8,11 @@ import type { FieldValidationType } from 'utils/validation';
 import { RadiosWrapper } from './radios';
 import './styles.css';
 
-function AlgorithmForm() {
+type AlgorithmFormProps = {
+  onSuccess: () => void;
+};
+
+function AlgorithmForm({ onSuccess }: AlgorithmFormProps) {
   const $form = createElement('form', { class: 'algorithm-form' });
   const $button = Button({ type: 'submit', full: true, children: 'Enviar' });
   const $gendersRadios = RadiosWrapper();
@@ -49,6 +53,10 @@ function AlgorithmForm() {
         );
       }
     });
+
+    if ($form.checkValidity()) {
+      onSuccess();
+    }
   }
 
   inputName.$input.addEventListener('input', handleInput);
