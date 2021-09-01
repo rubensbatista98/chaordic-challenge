@@ -35,7 +35,7 @@ function Button<
   const tagName = asLink ? 'a' : 'button';
 
   return createElement(tagName, {
-    class: `button -${variant} ${full && '-full'} ${className}`,
+    class: `button -${variant} ${full ? '-full' : ''} ${className}`,
     children,
     ...rest
   }) as ButtonType;
