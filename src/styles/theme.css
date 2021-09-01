@@ -11,6 +11,7 @@
   --text-3: hsl(var(--brand-hue) 35% 25%);
 
   --error: hsl(360 100% 50%);
+  --success: hsl(120 98% 32%);
 
   --fs-1: 1.2rem;
   --fs-2: 1.4rem;
