@@ -1,3 +1,4 @@
+import { SuccessModal } from 'components/success-modal';
 import { createElement } from 'utils/create-element';
 
 import { ShareForm } from '../share-form';
@@ -5,6 +6,8 @@ import { ShareForm } from '../share-form';
 import './styles.css';
 
 function ShareSection() {
+  const successModal = SuccessModal({ message: 'Obrigado por compartilhar!' });
+
   const $section = createElement('section', {
     id: 'share-section',
     class: 'home-section',
@@ -18,7 +21,7 @@ function ShareSection() {
     `
   });
 
-  $section.appendChild(ShareForm());
+  $section.appendChild(ShareForm({ onSuccess: successModal.open }));
 
   return $section;
 }

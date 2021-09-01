@@ -7,7 +7,11 @@ import type { FieldValidationType } from 'utils/validation';
 
 import './styles.css';
 
-function ShareForm() {
+type ShareFormProps = {
+  onSuccess: () => void;
+};
+
+function ShareForm({ onSuccess }: ShareFormProps) {
   const $inputsContainer = createElement('div', { class: 'inputs-container' });
   const $form = createElement('form', {
     class: 'share-form',
@@ -59,6 +63,10 @@ function ShareForm() {
         }
       }
     });
+
+    if ($form.checkValidity()) {
+      onSuccess();
+    }
   }
 
   inputName.$input.addEventListener('input', handleInput);
