@@ -68,11 +68,26 @@ function SuccessModal({ message, ...rest }: ModalProps) {
 
   function close() {
     $overlay.removeEventListener('keydown', handleKeyDown);
-    $overlay.parentNode?.removeChild($overlay);
+    $overlay.removeEventListener('click', close);
+    $button.removeEventListener('click', close);
 
-    if ($lastFocusedEl) {
-      $lastFocusedEl.focus();
+    function onFinishAnimation() {
+      $overlay.parentNode?.removeChild($overlay);
+
+      if ($lastFocusedEl) {
+        $lastFocusedEl.focus();
+      }
     }
+
+    $modal
+      .animate(
+        [
+          { transform: 'translateY(0)', opacity: 1 },
+          { transform: 'translateY(-150px)', opacity: 0 }
+        ],
+        { duration: 250 }
+      )
+      .addEventListener('finish', onFinishAnimation, { once: true });
   }
 
   function open() {

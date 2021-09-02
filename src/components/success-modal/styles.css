@@ -19,6 +19,11 @@
 
   border-radius: 10px;
   padding: var(--spacing-4) var(--spacing-2) var(--spacing-2);
+
+  animation: openModal 250ms;
+  animation-delay: 50ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
 }
 
 .modal-dialog > .success-icon {
@@ -42,4 +47,16 @@
   font-size: var(--fs-4);
   text-align: center;
   margin-block-end: var(--spacing-5);
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
