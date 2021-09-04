@@ -1,5 +1,21 @@
 #products-section {
   margin-block: 9rem 13rem;
+
+  max-block-size: 135rem;
+  overflow-y: auto;
+
+  scrollbar-color: var(--surface-2) transparent;
+  scrollbar-width: thin;
+
+  padding-block-end: var(--spacing-2);
+}
+
+#products-section::-webkit-scrollbar {
+  inline-size: 5px;
+  background-color: transparent;
+}
+#products-section::-webkit-scrollbar-thumb {
+  background-color: var(--surface-2);
 }
 
 #products-section > .button-more {
@@ -17,7 +33,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(auto, var(--column-size)));
   justify-content: center;
-  gap: var(--spacing-3);
+  gap: var(--spacing-2);
 
   padding: var(--spacing-3) var(--spacing-1) 0;
 }
@@ -30,7 +46,7 @@
 
   #products-section > .products-list {
     --column-size: 20rem;
-    gap: var(--spacing-5);
+    gap: var(--spacing-4);
   }
 }
 
