@@ -1,5 +1,6 @@
 import { Button } from 'components/button';
 import { ProductCard } from 'components/product-card';
+import { SuccessModal } from 'components/success-modal';
 import { createElement } from 'utils/create-element';
 import { getProducts } from 'services/api/products';
 
@@ -13,11 +14,21 @@ function insertProductsIntoDom(products: Product[]) {
   if ($productsList === null) return;
 
   const $cards = products.map(ProductCard);
+  const $firstCardButton = $cards[0].querySelector('button')!;
   const isPaginatedProducts = $productsList.childElementCount > 0;
+
+  $cards.forEach(($card) => {
+    const $button = $card.querySelector('button');
+
+    $button?.addEventListener('click', () => {
+      SuccessModal({ message: 'Obrigado por comprar conosco!' }).open();
+    });
+  });
 
   $productsList.append(...$cards);
 
   if (isPaginatedProducts) {
+    $firstCardButton.focus();
     $cards[0].scrollIntoView();
   }
 }
