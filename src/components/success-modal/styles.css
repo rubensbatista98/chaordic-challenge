@@ -1,0 +1,62 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: hsl(0 0% 0% / 0.2);
+
+  padding: 6rem var(--spacing-1) var(--spacing-2);
+}
+
+.modal-dialog {
+  inline-size: min(80vw, 50rem);
+
+  color: var(--text-1);
+  background-color: var(--surface-1);
+
+  border-radius: 10px;
+  padding: var(--spacing-4) var(--spacing-2) var(--spacing-2);
+
+  animation: openModal 250ms;
+  animation-delay: 50ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+.modal-dialog > .success-icon {
+  inline-size: 100%;
+  block-size: 10rem;
+
+  margin-block-end: var(--spacing-2);
+}
+
+.modal-dialog > .button-success {
+  display: block;
+  margin-inline-start: auto;
+  margin-block-start: var(--spacing-2);
+
+  color: var(--text-1);
+  background-color: var(--success);
+  border: none;
+}
+
+.modal-dialog > #success-message {
+  font-size: var(--fs-4);
+  text-align: center;
+  margin-block-end: var(--spacing-5);
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

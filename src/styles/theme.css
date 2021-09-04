@@ -1,0 +1,30 @@
+:root {
+  --brand-hue: 270deg;
+
+  --brand: hsl(var(--brand-hue) 100% 50%);
+
+  --surface-1: hsl(var(--brand-hue) 20% 15%);
+  --surface-2: hsl(var(--brand-hue) 30% 70%);
+
+  --text-1: #efefef;
+  --text-2: hsl(var(--brand-hue) 55% 90%);
+  --text-3: hsl(var(--brand-hue) 35% 25%);
+
+  --error: hsl(360 100% 50%);
+  --success: hsl(120 98% 32%);
+
+  --fs-1: 1.2rem;
+  --fs-2: 1.4rem;
+  --fs-3: 1.6rem;
+  --fs-4: 1.8rem;
+  --fs-5: 2rem;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --spacing-1: 0.8rem;
+  --spacing-2: 1.6rem;
+  --spacing-3: 2.4rem;
+  --spacing-4: 3.2rem;
+  --spacing-5: 4rem;
+}

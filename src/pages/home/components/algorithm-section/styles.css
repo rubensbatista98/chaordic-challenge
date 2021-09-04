@@ -1,0 +1,33 @@
+#algorithm-section {
+  display: grid;
+  grid-template-columns: minmax(auto, 50rem);
+  justify-content: center;
+  gap: var(--spacing-4);
+
+  padding-inline: var(--spacing-2);
+  margin-block: var(--spacing-4) 0;
+}
+
+@media (min-width: 60rem) {
+  #algorithm-section {
+    grid-template-columns: 1fr 34rem;
+    gap: 6rem;
+  }
+}
+
+#algorithm-section .title {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-bold);
+  color: var(--text-2);
+
+  margin-block-end: var(--spacing-4);
+}
+
+#algorithm-section .paragraph {
+  font-size: var(--fs-2);
+  line-height: 1.5;
+}
+
+#algorithm-section .paragraph + .paragraph {
+  margin-block-start: var(--spacing-3);
+}

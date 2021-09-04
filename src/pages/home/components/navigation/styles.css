@@ -1,0 +1,23 @@
+.navigation {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 16rem));
+  justify-content: center;
+  gap: var(--spacing-3);
+
+  margin-block-start: 5rem;
+}
+
+/* 57.5rem = 920px / 16px   */
+@media (min-width: 57.5rem) {
+  .navigation {
+    --columns: 4;
+    gap: var(--spacing-5);
+  }
+}
+
+.navigation > .button.link {
+  text-transform: none;
+  padding: 1.2rem 0;
+}

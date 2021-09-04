@@ -1,0 +1,74 @@
+.app-header {
+  --size: 36rem;
+
+  color: var(--text-3);
+
+  padding-block: 6.5rem 7.5rem;
+  padding-inline: var(--spacing-2);
+
+  position: relative;
+}
+
+.app-header::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background-color: var(--surface-2);
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+  z-index: -1;
+}
+
+.app-header > .title {
+  max-inline-size: var(--size);
+
+  font-size: 4rem;
+}
+
+.app-header > .title > span {
+  display: block;
+
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-5);
+}
+
+.app-header > .subtitle {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-regular);
+
+  max-inline-size: var(--size);
+  margin-block-start: var(--spacing-1);
+}
+
+/*
+  For some reason rem unit is been 16px rather than 62.5% applied in html
+  on reset.
+
+  fix this later
+
+  37.5rem = 600px
+*/
+
+@media (min-width: 37.5rem) {
+  .app-header > :is(.title, .subtitle) {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .app-header > .subtitle {
+    margin-block-start: 1.2rem;
+  }
+}
+
+@media (min-width: 68.75rem) {
+  .app-header > .title > span {
+    margin-block-end: 0.4rem;
+  }
+
+  .app-header > .subtitle {
+    max-inline-size: initial;
+    margin-block-start: var(--spacing-3);
+  }
+}

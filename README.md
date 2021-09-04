@@ -7,4 +7,6 @@ O projeto foi baseado em um teste para desenvolvedores front-end.
 
 [Repositório do teste](https://github.com/chaordic/frontend-developer-challenge).
 
+[Resolução feita afins de estudos](https://chaordic-teste.netlify.app/).
+
 Encontrei o teste no repositório [frontend-challenges](https://github.com/felipefialho/frontend-challenges), criado pelo [Felipe Fialho](https://github.com/felipefialho).

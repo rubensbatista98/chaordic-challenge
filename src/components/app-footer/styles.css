@@ -1,0 +1,32 @@
+.app-footer {
+  font-size: var(--fs-2);
+  text-align: center;
+  color: var(--text-3);
+
+  padding: 7rem var(--spacing-1) var(--spacing-4);
+
+  position: relative;
+}
+
+.app-footer::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background-color: var(--surface-2);
+
+  clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
+  z-index: -1;
+}
+
+.app-footer > p > span {
+  display: block;
+}
+
+/* 57.5rem = 920px / 16px */
+@media (min-width: 57.5rem) {
+  .app-footer {
+    padding-block: 16rem 8rem;
+  }
+}

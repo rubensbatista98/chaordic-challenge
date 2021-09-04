@@ -1,0 +1,11 @@
+#share-section {
+  margin-block: 0 7rem;
+}
+
+#share-section > .info {
+  font-size: var(--fs-2);
+  line-height: 1.5;
+  text-align: center;
+
+  margin: var(--spacing-5) var(--spacing-1);
+}

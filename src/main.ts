@@ -1,8 +1,7 @@
-import "./style.css";
+import 'styles/main.css';
 
-const app = document.querySelector<HTMLDivElement>("#app")!;
+import { Home } from 'pages/home';
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+const app = document.querySelector<HTMLDivElement>('#app')!;
+
+app.appendChild(Home());
