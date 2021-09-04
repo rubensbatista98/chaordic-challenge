@@ -1,6 +1,7 @@
 import { createElement } from 'utils/create-element';
 import type { Props } from 'utils/create-element';
 
+import { addLoadingObserver, createLoader } from './loading-state';
 import './styles.css';
 
 type AsLink =
@@ -13,7 +14,7 @@ type AsLink =
       href?: never;
     };
 
-type ButtonProps = {
+export type ButtonProps = {
   variant?: 'primary' | 'secondary';
   full?: boolean;
   children: NonNullable<Props['children']>;
@@ -33,12 +34,15 @@ function Button<
   } = props;
 
   const tagName = asLink ? 'a' : 'button';
-
-  return createElement(tagName, {
+  const $button = createElement(tagName, {
     class: `button -${variant} ${full ? '-full' : ''} ${className}`,
-    children,
+    children: props['data-loading'] === '' ? createLoader() : children,
     ...rest
   }) as ButtonType;
+
+  addLoadingObserver($button, children);
+
+  return $button;
 }
 
 export { Button };

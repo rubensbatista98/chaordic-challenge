@@ -43,3 +43,52 @@
   color: var(--text-1);
   background-color: var(--surface-1);
 }
+
+.button[data-loading] {
+  pointer-events: none;
+  cursor: default;
+}
+
+.button > .loader {
+  inline-size: 18rem;
+  block-size: 2.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.button > .loader > span {
+  inline-size: 1.2rem;
+  block-size: 1.2rem;
+
+  border-radius: 50%;
+  margin-inline: var(--spacing-1);
+
+  animation: bounce 450ms ease-in infinite;
+}
+.button > .loader > span:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+.button > .loader > span:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+.button.-primary > .loader > span {
+  background-color: var(--surface-1);
+}
+
+.button.-secondary > .loader > span {
+  background-color: var(--surface-2);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1rem);
+  }
+}
